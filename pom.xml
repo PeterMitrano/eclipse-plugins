@@ -26,9 +26,14 @@
 
     <repositories>
         <repository>
-            <id>juno</id>
+            <id>mars</id>
             <layout>p2</layout>
-            <url>http://download.eclipse.org/releases/luna</url>
+            <url>http://download.eclipse.org/releases/mars</url>
+        </repository>
+        <repository>
+            <id>cmake4eclipse</id>
+            <layout>p2</layout>
+            <url>https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/</url>
         </repository>
     </repositories>
 

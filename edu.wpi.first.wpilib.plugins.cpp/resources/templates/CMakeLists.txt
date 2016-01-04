@@ -1,17 +1,21 @@
 project("FRCUserProgram")
-cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
+
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+
+cmake_policy(SET CMP0060 NEW)
+
 find_package(Gazebo REQUIRED)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
 
-include_directories("~/wpilib/simulation/include"
+include_directories("src"
+  "~/wpilib/simulation/include"
   ${GAZEBO_INCLUDE_DIRS})
 
 link_directories("~/wpilib/simulation/lib")
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
-set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
-set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
-
-target_link_libraries(${PROJECT_NAME} wpilibcSim ${GAZEBO_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} wpilibcSim ntcore  ${GAZEBO_LIBRARIES})

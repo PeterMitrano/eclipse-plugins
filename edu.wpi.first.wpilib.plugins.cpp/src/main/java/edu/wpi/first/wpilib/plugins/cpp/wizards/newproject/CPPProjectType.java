@@ -64,6 +64,7 @@ public class CPPProjectType implements ProjectType {
 		files.put("build.xml", "build.xml");
 		files.put("build.properties", "build.properties");
 		files.put(".cproject", ".cproject");
+		files.put("CMakeLists.txt", "CMakeLists.txt");
 		return files;
 	}
 
